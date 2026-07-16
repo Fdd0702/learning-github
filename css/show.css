@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(180deg, #e9b7f1 0%, #f5e2f5 8%, #f0d0f3 30%, #f7e2f8 60%, #e7c1d9 100%);
+    font-family: '微软雅黑', sans-serif;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: linear-gradient(135deg, #8441b4 0%, #a261d1 44%, #7d76dd 66%, #4747aa 100%);
+    color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.logo {
+    margin: 0 40px;
+    background-color: #a054d6;
+    padding: 0 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 60px;
+    height: 65px;
+}
+
+.spinner {
+    background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
+    width: 60px;
+    height: 60px;
+    animation: spinning 1.7s linear infinite;
+    border-radius: 50px;
+    filter: blur(1px);
+    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+    margin: 200px auto;
+}
+
+.spinner1 {
+    background-color: rgb(36, 36, 36);
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    filter: blur(10px);
+}
+
+@keyframes spinning {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.nav-left {
+    display: flex;
+    margin: 0 50px 0 20px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 22px;
+}
+
+.nav-right {
+    display: flex;
+    margin: 0 30px 0 150px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 20px;
+}
+
+/* 链接基础样式 */
+.fun1,
+.fun2,
+.mine {
+    text-decoration: none;
+    color: #c8b8e0;
+    padding: 24px 18px;
+    display: inline-block;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+}
+
+/* 分隔符样式 */
+.sep {
+    color: rgba(255, 255, 255, 0.25);
+    display: inline-block;
+    line-height: 80px;
+    font-weight: 700;
+    margin: 0 2px;
+}
+
+.fun1:hover,
+.fun2:hover,
+.mine:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #e2c9ff;
+    border-radius: 12px;
+    transform: translateY(-5px);
+}
+
+
+.myself {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    flex-shrink: 0;
+    margin-left: 10px;
+    padding-bottom: 5px;
+}
+
+.mine {
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+/* 详情容器（避开固定导航栏） */
+.detail-container {
+    max-width: 1000px;
+    margin: 140px auto 40px;
+    padding: 0 20px;
+}
+
+.detail-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px 45px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.detail-card img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 24px;
+}
+
+.detail-card h1 {
+    font-size: 32px;
+    color: #2d1b3a;
+    margin-bottom: 12px;
+}
+
+.detail-card .desc {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.detail-card .meta {
+    display: flex;
+    gap: 30px;
+    font-size: 18px;
+    color: #777;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+.detail-card .meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* 返回按钮（可选） */
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    color: #8441b4;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    background-color: #1a1a2e;
+    color: #c8b8e0;
+    padding: 40px 60px 20px;
+    margin-top: 60px;
+}
+
+/* 顶部链接栏 */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    font-size: 16px;
+}
+
+.footer-links a {
+    color: #c8b8e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #e2c9ff;
+}
+
+.footer-links .sep {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+
+.footer-main {
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+    margin: 0 30px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #e2c9ff;
+}
+
+.footer-column a {
+    color: #b0a0cc;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: #ffffff;
+}
+
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+    margin-left: 60px;
+}
+
+.contact-phone {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e2c9ff;
+    letter-spacing: 2px;
+}
+
+.contact-hours {
+    font-size: 14px;
+    color: #b0a0cc;
+    margin: 8px 0 16px;
+    line-height: 1.5;
+}
+
+.contact-btn {
+    background: transparent;
+    border: 1px solid #e2c9ff;
+    color: #e2c9ff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #e2c9ff;
+    color: #1a1a2e;
+}
+
+
+.action-buttons button:hover {
+    transform: scale(1.03);
+}
+.comment-section textarea:focus {
+    border-color: #8441b4 !important;
+}
