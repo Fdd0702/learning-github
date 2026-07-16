@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的</title>
+    <link rel="stylesheet" href="css/user.css">
+    <script>
+        (function () {
+            // 获取 URL 中的 id 参数
+            const params = new URLSearchParams(window.location.search);
+            const targetUser = params.get('id');
+
+            // 如果 URL 中有 id 参数，存到 localStorage 中，供 user.js 使用
+            if (targetUser) {
+                localStorage.setItem('viewingUser', targetUser);
+            } else {
+                // 如果没有 id 参数，清除 viewingUser，表示查看自己的主页
+                localStorage.removeItem('viewingUser');
+            }
+        })();
+    </script>
+    <script src="js/user.js"></script>
+    </script>
+</head>
+
+<body>
+    <div class="nav">
+        <a href="about.html" class="logo">
+            <div class="spinner">
+                <div class="spinner1"></div>
+            </div>
+        </a>
+        <div class="nav-left">
+            <a class="fun1" href="index.html">LifeHub</a>
+            <span class="sep">|</span>
+            <a class="fun1" href="index.html">首页</a>
+            <span class="sep">|</span>
+            <a class="fun1" href="hot.html">热门</a>
+            <span class="sep">|</span>
+            <a class="fun1" href="fashion.html">穿搭</a>
+            <span class="sep">|</span>
+            <a class="fun1" href="food.html">探店</a>
+            <span class="sep">|</span>
+            <a class="fun1" href="travel.html">旅行</a>
+            <span class="sep">|</span>
+            <a class="fun1" href="#">摄影</a>
+        </div>
+
+        <div class="nav-right">
+            <!-- 已登录状态：消息通知 + 退出登录 -->
+            <a class="fun2" href="#">消息通知</a>
+            <span class="sep">|</span>
+            <a class="fun2" id="logoutBtn" href="#" style="color:#c6c4c4; font-weight:600;">🚪 退出登录</a>
+        </div>
+
+        <div class="myself">
+            <a href="#" class="mine">👤 我的</a>
+        </div>
+    </div>
+
+
+    <div class="mine-card">
+        <div class="mine-head">
+            <div class="avatar">
+                <img id="userAvatar" src="img/head photo/9.JPG" alt="">
+                <h2 id="userName" class="mine-name">芬朵朵</h2>
+                <div id="editArea" class="edit-area" style="display:none;">
+                    <button id="editAvatarBtn" class="edit-btn">📷 换头像</button>
+                    <button id="editNicknameBtn" class="edit-btn">✏️ 改昵称</button>
+                    <button id="editBioBtn" class="edit-btn">📝 改签名</button>
+                </div>
+            </div>
+
+            <div class="mine-quantity">
+                <span id="fansCount" class="fans">粉丝：0</span>
+                <span class="love" id="followCount">关注：0</span>
+                <span id="playCount" class="play">播放量：0</span>
+            </div>
+            <div class="introduction">
+                <p id="userBio">✦ 拂却他年成雪色，如见白雪如见我 ✦</p>
+            </div>
+            <div class="follow-area" id="followArea" style="display:none; text-align:center; margin-top:16px;">
+                <button id="followUserBtn" class="follow-btn">+ 关注</button>
+            </div>
+        </div>
+
+        <div class="upload-area">
+            <button class="upload-btn" id="uploadBtn">📤 上传作品</button>
+        </div>
+
+        <div class="work-all" id="workContainer">
+            <!-- 由 user.js 动态渲染 -->
+        </div>
+
+        <!-- ====== 我的点赞 ====== -->
+        <div id="myLikesSection" style="margin-top:50px; border-top:2px solid #e8d5f5; padding-top:30px; display:none;">
+            <h3 style="color:#8441b4; font-size:24px; text-align:center; margin-bottom:20px;">❤️ 我的点赞</h3>
+            <div class="work-all" id="myLikesContainer">
+                <!-- 由 user.js 动态渲染 -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== 底部 ==================== -->
+    <div class="footer">
+        <div class="footer-links">
+            <a href="about.html">关于 LifeHub</a>
+            <span class="sep">|</span>
+            <a href="#">加入我们</a>
+            <span class="sep">|</span>
+            <a href="#">联系我们</a>
+            <span class="sep">|</span>
+            <a href="#">帮助中心</a>
+            <span class="sep">|</span>
+            <a href="#">版权所有</a>
+        </div>
+
+        <div class="footer-main">
+            <div class="footer-column">
+                <h4>探索</h4>
+                <a href="#">穿搭灵感</a>
+                <a href="#">美食探店</a>
+                <a href="#">城市旅行</a>
+            </div>
+            <div class="footer-column">
+                <h4>支持</h4>
+                <a href="#">新手入门</a>
+                <a href="#">账号问题</a>
+                <a href="#">举报反馈</a>
+            </div>
+            <div class="footer-column">
+                <h4>关注我们</h4>
+                <a href="#">📖 官方博客</a>
+                <a href="#">📷 小红书</a>
+                <a href="#">🎵 抖音</a>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-phone">960702</div>
+                <div class="contact-hours">8:00 - 18:00（仅收市话费）</div>
+                <button class="contact-btn">✉️ 人工客服</button>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 LifeHub. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>
